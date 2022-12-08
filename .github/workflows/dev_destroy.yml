@@ -5,7 +5,7 @@ on:
     branches:
     - prod
     paths: 
-    - 01_week/dev/**
+    - dev/**
     inputs:
       approver:
         description: 'Terraform Destroy approver'     
@@ -41,12 +41,12 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        working-directory: ./01_week/dev
+        working-directory: ./dev
 
       - name: Terraform Plan
         id: plan
         run: terraform plan -input=false -no-color -destroy
-        working-directory: ./01_week/dev 
+        working-directory: ./dev 
         continue-on-error: true
 
       - name: Manual Approval
@@ -58,6 +58,6 @@ jobs:
       - name: Terraform Destroy
         id: destroy
         run: terraform destroy -input=false --auto-approve
-        working-directory: ./01_week/dev 
+        working-directory: ./dev 
         shell: bash
         
