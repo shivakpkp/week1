@@ -3,7 +3,7 @@ name: "Terraform Destroy - Dev"
 on:
   workflow_dispatch:
     branches:
-    - master
+    - prod
     paths: 
     - 01_week/dev/**
     inputs:
