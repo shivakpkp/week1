@@ -10,7 +10,7 @@ on:
       approver:
         description: 'Terraform Destroy approver'     
         required: true
-        default: 'igeiman13'
+        default: 'shivakpkp'
 
 permissions:
   contents: read
